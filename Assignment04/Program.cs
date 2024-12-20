@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+using System.Text;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Assignment04
@@ -68,21 +69,39 @@ namespace Assignment04
 
             #region Q5 - Write a program to enter marks of five subjects and calculate total, average and percentage.
 
-            int[] Marks = new int[5];
+            //int[] Marks = new int[5];
 
-            Console.WriteLine("Enter Marks");
+            //Console.WriteLine("Enter Marks");
 
-            for (int i = 0; i < Marks.Length; )
+            //for (int i = 0; i < Marks.Length; )
+            //{
+            //    bool markParse = int.TryParse( Console.ReadLine(), out Marks[i]);
+
+            //    if (markParse)
+            //        ++i;
+            //}
+
+            //Console.WriteLine($"Total : {Marks.Sum()}");
+            //Console.WriteLine($"Average : {Marks.Sum()/Marks.Length}");
+            //Console.WriteLine($"Percentage : {Marks.Sum()/Marks.Length}%");
+
+            #endregion
+
+            #region Q6 - Write a program to allow the user to enter a string and print the REVERSE of it.
+
+            Console.Write("Enter a word : ");
+
+            string myString = Console.ReadLine() ?? " ";
+
+            StringBuilder rString = new StringBuilder();
+
+            for ( int i = myString.Length - 1 ; i >= 0; i-- )
             {
-                bool markParse = int.TryParse( Console.ReadLine(), out Marks[i]);
-
-                if (markParse)
-                    ++i;
+                rString.Append( myString[i] );
             }
 
-            Console.WriteLine($"Total : {Marks.Sum()}");
-            Console.WriteLine($"Average : {Marks.Sum()/Marks.Length}");
-            Console.WriteLine($"Percentage : {Marks.Sum()/Marks.Length}%");
+            Console.WriteLine( rString );
+
 
             #endregion
         }
