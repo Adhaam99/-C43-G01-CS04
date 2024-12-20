@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System;
+using System.Numerics;
 using System.Text;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -134,27 +135,55 @@ namespace Assignment04
 
             #region Q9 - Write a program in C# Sharp to convert a decimal number into binary without using an array.
 
-            Console.Write("Enter a number to convert : ");
+            //Console.Write("Enter a number to convert : ");
 
-            int.TryParse(Console.ReadLine(), out int num);
+            //int.TryParse(Console.ReadLine(), out int num);
 
-            StringBuilder binary = new StringBuilder();
+            //StringBuilder binary = new StringBuilder();
 
-            if (num == 0)
+            //if (num == 0)
+            //{
+            //    Console.WriteLine("0000");
+            //}
+            //else
+            //{
+            //    while (num > 0)
+            //    {
+            //        binary.Append(num % 2);
+            //        num /= 2;
+            //    }
+            //}
+
+            //Console.WriteLine(binary);
+
+
+            #endregion
+
+            #region Q10 - Create a program that asks the user to input three points (x1, y1), (x2, y2), and (x3, y3), and determines whether these points lie on a single straight line
+
+            int[,] points = new int[3, 2];
+
+            for (int i = 0; i < points.GetLength(0); i++)
             {
-                Console.WriteLine("0000");
-            }
-            else
-            {
-                while (num > 0)
+                Console.WriteLine($"Enter point {i + 1}");
+
+                for (int j = 0; j < points.GetLength(1); )
                 {
-                    binary.Append(num % 2);
-                    num /= 2;
+                    bool numParse = int.TryParse(Console.ReadLine(), out points[i, j]);
+
+                    if (numParse)
+                        ++j;
                 }
             }
 
-            Console.WriteLine(binary);
-
+            if (points[0,0] == points[1,0] && points[0, 0] == points[2, 0] && points[0, 1] == points[1, 1] && points[0, 1] == points[2, 1]  )
+            {
+                Console.WriteLine("Three points is in the same straight line");
+            }
+            else
+            {
+                Console.WriteLine("Three points isn't in the same straight line");
+            }
 
             #endregion
         }
