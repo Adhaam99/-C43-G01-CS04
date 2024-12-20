@@ -116,19 +116,45 @@ namespace Assignment04
 
             #region Q8 - Write a program in C# Sharp to find prime numbers within a range of numbers.
 
-            Console.Write("Start number : ");
+            //Console.Write("Start number : ");
 
-            int.TryParse(Console.ReadLine(), out int num01);
+            //int.TryParse(Console.ReadLine(), out int num01);
 
-            Console.Write("End number : ");
+            //Console.Write("End number : ");
 
-            int.TryParse(Console.ReadLine(), out int num02);
+            //int.TryParse(Console.ReadLine(), out int num02);
 
-            for (int i = num01; i < num02; i++)
+            //for (int i = num01; i < num02; i++)
+            //{
+            //    if (checkPrimeNumber(i))
+            //        Console.WriteLine(i);
+            //}
+
+            #endregion
+
+            #region Q9 - Write a program in C# Sharp to convert a decimal number into binary without using an array.
+
+            Console.Write("Enter a number to convert : ");
+
+            int.TryParse(Console.ReadLine(), out int num);
+
+            StringBuilder binary = new StringBuilder();
+
+            if (num == 0)
             {
-                if (checkPrimeNumber(i))
-                    Console.WriteLine(i);
+                Console.WriteLine("0000");
             }
+            else
+            {
+                while (num > 0)
+                {
+                    binary.Append(num % 2);
+                    num /= 2;
+                }
+            }
+
+            Console.WriteLine(binary);
+
 
             #endregion
         }
