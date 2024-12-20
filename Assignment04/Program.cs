@@ -89,18 +89,33 @@ namespace Assignment04
 
             #region Q6 - Write a program to allow the user to enter a string and print the REVERSE of it.
 
-            Console.Write("Enter a word : ");
+            //Console.Write("Enter a word : ");
 
-            string myString = Console.ReadLine() ?? " ";
+            //string myString = Console.ReadLine() ?? " ";
 
-            StringBuilder rString = new StringBuilder();
+            //StringBuilder rString = new StringBuilder();
 
-            for ( int i = myString.Length - 1 ; i >= 0; i-- )
-            {
-                rString.Append( myString[i] );
-            }
+            //for ( int i = myString.Length - 1 ; i >= 0; i-- )
+            //{
+            //    rString.Append( myString[i] );
+            //}
 
-            Console.WriteLine( rString );
+            //Console.WriteLine( rString );
+
+            #endregion
+
+            #region Q7 - Write a program to allow the user to enter int and print the REVERSED of it.
+
+            Console.Write("Enter number : ");
+
+            int.TryParse(Console.ReadLine(), out int num);
+
+            Console.WriteLine( ~num );
+
+            #endregion
+
+            #region Q8 - Write a program in C# Sharp to find prime numbers within a range of numbers.
+
 
 
             #endregion
