@@ -1,4 +1,5 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using System.Numerics;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Assignment04
 {
@@ -22,15 +23,28 @@ namespace Assignment04
 
             #region Q2 - Write a program that allows the user to insert an integer thenprint a multiplication table up to 12.
 
+            //Console.Write("Enter a number : ");
+
+            //int.TryParse(Console.ReadLine(), out int num);
+
+            //for (int i = 1; i <= 12; i++)
+            //{
+            //    Console.WriteLine($"{num} * {i} = {num * i}");
+            //}
+
+            #endregion
+
+            #region Q3 - Write a program that allows to user to insert number then print all even numbers between 1 to this number
+
             Console.Write("Enter a number : ");
 
             int.TryParse(Console.ReadLine(), out int num);
 
-            for (int i = 1; i <= 12; i++)
+            for (int i = 1; i <= num; i++)
             {
-                Console.WriteLine($"{num} * {i} = {num * i}");
+                if (i % 2 != 0)
+                    Console.WriteLine(i);
             }
-
 
             #endregion
         }
