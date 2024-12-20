@@ -9,19 +9,27 @@ namespace Assignment04
 
             #region Q1 - Write a program that allows the user to insert an integer then print all numbers between 1 to that number.
 
-            Console.Write("Enter as number : ");
+            //Console.Write("Enter a number : ");
 
-            int.TryParse(Console.ReadLine(), out int num);
+            //int.TryParse(Console.ReadLine(), out int num);
 
-            for (int i = 0; i < num; i++)
-            {
-                Console.WriteLine(i + 1 );
-            }
+            //for (int i = 0; i < num; i++)
+            //{
+            //    Console.WriteLine(i + 1 );
+            //}
 
             #endregion
 
             #region Q2 - Write a program that allows the user to insert an integer thenprint a multiplication table up to 12.
 
+            Console.Write("Enter a number : ");
+
+            int.TryParse(Console.ReadLine(), out int num);
+
+            for (int i = 1; i <= 12; i++)
+            {
+                Console.WriteLine($"{num} * {i} = {num * i}");
+            }
 
 
             #endregion
