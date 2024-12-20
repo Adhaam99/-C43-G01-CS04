@@ -50,19 +50,39 @@ namespace Assignment04
 
             #region Q4 - Write a program that takes two integers then prints the power.
 
-            Console.Write("Enter number : ");
+            //Console.Write("Enter number : ");
 
-            int.TryParse(Console.ReadLine(), out int num);
+            //int.TryParse(Console.ReadLine(), out int num);
 
-            Console.Write("Enter Power : ");
+            //Console.Write("Enter Power : ");
 
-            int.TryParse(Console.ReadLine(), out int power);
+            //int.TryParse(Console.ReadLine(), out int power);
 
-            double result = Math.Pow(num , power);
+            //double result = Math.Pow(num , power);
 
-            Console.Clear();
+            //Console.Clear();
 
-            Console.WriteLine(result);
+            //Console.WriteLine(result);
+
+            #endregion
+
+            #region Q5 - Write a program to enter marks of five subjects and calculate total, average and percentage.
+
+            int[] Marks = new int[5];
+
+            Console.WriteLine("Enter Marks");
+
+            for (int i = 0; i < Marks.Length; )
+            {
+                bool markParse = int.TryParse( Console.ReadLine(), out Marks[i]);
+
+                if (markParse)
+                    ++i;
+            }
+
+            Console.WriteLine($"Total : {Marks.Sum()}");
+            Console.WriteLine($"Average : {Marks.Sum()/Marks.Length}");
+            Console.WriteLine($"Percentage : {Marks.Sum()/Marks.Length}%");
 
             #endregion
         }
