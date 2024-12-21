@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Numerics;
+using System.Security.Principal;
 using System.Text;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -117,19 +118,31 @@ namespace Assignment04
 
             #region Q8 - Write a program in C# Sharp to find prime numbers within a range of numbers.
 
-            //Console.Write("Start number : ");
+            Console.Write("Start number : ");
 
-            //int.TryParse(Console.ReadLine(), out int num01);
+            int.TryParse(Console.ReadLine(), out int num01);
 
-            //Console.Write("End number : ");
+            Console.Write("End number : ");
 
-            //int.TryParse(Console.ReadLine(), out int num02);
+            int.TryParse(Console.ReadLine(), out int num02);
 
-            //for (int i = num01; i < num02; i++)
-            //{
-            //    if (checkPrimeNumber(i))
-            //        Console.WriteLine(i);
-            //}
+            for (int i = num01; i < num02; i++)
+            {
+                
+
+                bool flag = true;
+
+                if ( i <= 1)
+                    flag = false;
+                for (int j = 2 ; j <= Math.Sqrt(i); j++)
+                {
+                    if ( i % j == 0)
+                        flag = false;
+                }
+
+                if ( flag )
+                    Console.WriteLine(i);
+            }
 
             #endregion
 
@@ -161,46 +174,40 @@ namespace Assignment04
 
             #region Q10 - Create a program that asks the user to input three points (x1, y1), (x2, y2), and (x3, y3), and determines whether these points lie on a single straight line
 
-            int[,] points = new int[3, 2];
+            //int[,] points = new int[3, 2];
 
-            for (int i = 0; i < points.GetLength(0); i++)
-            {
-                Console.WriteLine($"Enter point {i + 1}");
+            //for (int i = 0; i < points.GetLength(0); i++)
+            //{
+            //    Console.WriteLine($"Enter point {i + 1}");
 
-                for (int j = 0; j < points.GetLength(1); )
-                {
-                    bool numParse = int.TryParse(Console.ReadLine(), out points[i, j]);
+            //    for (int j = 0; j < points.GetLength(1); )
+            //    {
+            //        bool numParse = int.TryParse(Console.ReadLine(), out points[i, j]);
 
-                    if (numParse)
-                        ++j;
-                }
-            }
+            //        if (numParse)
+            //            ++j;
+            //    }
+            //}
 
-            if (points[0,0] == points[1,0] && points[0, 0] == points[2, 0] && points[0, 1] == points[1, 1] && points[0, 1] == points[2, 1]  )
-            {
-                Console.WriteLine("Three points is in the same straight line");
-            }
-            else
-            {
-                Console.WriteLine("Three points isn't in the same straight line");
-            }
+            //if (points[0,0] == points[1,0] && points[0, 0] == points[2, 0] && points[0, 1] == points[1, 1] && points[0, 1] == points[2, 1]  )
+            //{
+            //    Console.WriteLine("Three points is in the same straight line");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Three points isn't in the same straight line");
+            //}
 
             #endregion
+
+            #region Q11 - Write a program that prints an identity matrix using for loop, in other words takes a value n from the user and shows the identity table of size n* n.
+
+
+            #endregion
+
+
         }
 
-        static bool checkPrimeNumber (int num)
-        {
-            if (num <= 1)
-                return false;
-            for (int i = 2 ; i <= Math.Sqrt(num) ; i++)
-            {
-                if ( num % i ==0 )
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
+        
     }
 }
