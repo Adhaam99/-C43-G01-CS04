@@ -56,19 +56,26 @@ namespace Assignment04
 
             #region Q4 - Write a program that takes two integers then prints the power.
 
-            //Console.Write("Enter number : ");
+            Console.Write("Enter number : ");
 
-            //int.TryParse(Console.ReadLine(), out int num);
+            int.TryParse(Console.ReadLine(), out int num);
 
-            //Console.Write("Enter Power : ");
+            Console.Write("Enter Power : ");
 
-            //int.TryParse(Console.ReadLine(), out int power);
+            int.TryParse(Console.ReadLine(), out int power);
 
-            //double result = Math.Pow(num , power);
+            //double result = Math.Pow(num, power);
 
-            //Console.Clear();
+            int Result = 1;
 
-            //Console.WriteLine(result);
+            for (int i = 0; i < power; i++)
+            {
+                Result = Result * num;
+            }
+
+            Console.Clear();
+
+            Console.WriteLine(Result);
 
             #endregion
 
@@ -389,22 +396,23 @@ namespace Assignment04
 
             #region Q20 - Write a Program to Print One Dimensional Array in Reverse Order
 
-            int[] arr01 = new int[3];
+            //int[] arr01 = new int[3];
 
-            for (int i = 0; i < arr01.Length; i++)
-            {
-                Console.Write($"Enter element {i + 1} : ");
-                int.TryParse(Console.ReadLine(), out arr01[i]);
-            }
+            //for (int i = 0; i < arr01.Length; i++)
+            //{
+            //    Console.Write($"Enter element {i + 1} : ");
+            //    int.TryParse(Console.ReadLine(), out arr01[i]);
+            //}
 
-            Console.WriteLine("===============================");
+            //Console.WriteLine("===============================");
 
-            for (int i = arr01.Length - 1; i >= 0; i--)
-            {
+            //for (int i = arr01.Length - 1; i >= 0; i--)
+            //{
 
-                Console.WriteLine(arr01[i]);
-                
-            }
+            //    Console.WriteLine(arr01[i]);
+
+            //}
+
             #endregion
 
         }
