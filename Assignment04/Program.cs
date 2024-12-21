@@ -202,22 +202,32 @@ namespace Assignment04
 
             #region Q11 - Write a program that prints an identity matrix using for loop, in other words takes a value n from the user and shows the identity table of size n* n.
 
-            Console.Write("Enter a number : ");
+            //Console.Write("Enter a number : ");
 
-            int.TryParse(Console.ReadLine(), out int num);
+            //int.TryParse(Console.ReadLine(), out int num);
 
-            for (int i = 0; i < num; i++)
-            {
-                for (int j = 0; j < num; j++)
-                {
-                    if (i == j)
-                        Console.Write("1");
-                    else
-                        Console.Write("0");
-                }
+            //for (int i = 0; i < num; i++)
+            //{
+            //    for (int j = 0; j < num; j++)
+            //    {
+            //        if (i == j)
+            //            Console.Write("1");
+            //        else
+            //            Console.Write("0");
+            //    }
 
-                Console.WriteLine();
-            }
+            //    Console.WriteLine();
+            //}
+
+            #endregion
+
+            #region Q12 - Write a program in C# Sharp to find the sum of all elements of the array.
+
+            int[] arr = { 1, 2, 3, 4, 5, };
+
+            double arrSum = arr.Sum();
+
+            Console.WriteLine($"Sum is : {arrSum}");
 
             #endregion
 
