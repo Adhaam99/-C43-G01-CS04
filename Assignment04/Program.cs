@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Numerics;
 using System.Security.Principal;
 using System.Text;
+using static System.Formats.Asn1.AsnWriter;
+using System.Xml.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Assignment04
@@ -345,20 +348,42 @@ namespace Assignment04
 
             #region Q18 - Given a list of space separated words, reverse the order of the words.
 
-            Console.Write("Enter a string : ");
+            //Console.Write("Enter a string : ");
 
-            string myString = Console.ReadLine() ?? " ";
+            //string myString = Console.ReadLine() ?? " ";
 
-            string[] arrOfString = myString.Split(" ");
+            //string[] arrOfString = myString.Split(" ");
 
-            StringBuilder newString = new StringBuilder();
+            //StringBuilder newString = new StringBuilder();
 
-            for (int i = arrOfString.Length - 1; i >= 0; i--)
+            //for (int i = arrOfString.Length - 1; i >= 0; i--)
+            //{
+            //    newString.AppendFormat(" {0}", arrOfString[i]);
+            //}
+
+            //Console.Write(newString.ToString().TrimStart());
+
+            #endregion
+
+            #region Q19 - Write a program to create two multidimensional arrays of same size. Accept value from user and store them in first array. Now copy all the elements of firstarray on second array and print second array.
+
+
+            int[] arr01 = new int[3];
+            int[] arr02 = new int[3];
+
+            for (int i = 0; i < arr01.Length; i++)
             {
-                newString.AppendFormat(" {0}", arrOfString[i]);
+                Console.Write($"Enter element {i + 1 } : ");
+                int.TryParse( Console.ReadLine() , out arr01[i] );
             }
 
-            Console.Write(newString.ToString().TrimStart());
+            Console.WriteLine("===============================");
+
+            for (int i = 0; i < arr02.Length; i++)
+            {
+                arr02[i] = arr01[i];
+                Console.WriteLine( arr02[i] );
+            }
 
             #endregion
 
