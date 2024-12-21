@@ -258,36 +258,59 @@ namespace Assignment04
 
             #region Q14 - Write a program in C# Sharp to count the frequency of each element of an array
 
-            int[] arr01 = { 1, 2, 1, 2, 3, 4, 4 };
-            bool[] used = new bool[arr01.Length];
+            //int[] arr01 = { 1, 2, 1, 2, 3, 4, 4 };
+            //bool[] used = new bool[arr01.Length];
 
-            for (int i = 0; i < arr01.Length; i++)
-            {
+            //for (int i = 0; i < arr01.Length; i++)
+            //{
 
-                if (used[i])
-                    continue;
+            //    if (used[i])
+            //        continue;
 
-                int count = 0;
+            //    int count = 0;
 
-                for (int j = 0; j < arr01.Length; j++)
+            //    for (int j = 0; j < arr01.Length; j++)
 
-                {
-                    
-                    if (arr01[i] == arr01[j])
-                    {
-                        count++;
+            //    {
 
-                        used[j] = true;
+            //        if (arr01[i] == arr01[j])
+            //        {
+            //            count++;
 
-                    }
-                }
+            //            used[j] = true;
 
-                Console.WriteLine($"Item {arr01[i]} Repeated {count} times");
-            }
+            //        }
+            //    }
+
+            //    Console.WriteLine($"Item {arr01[i]} Repeated {count} times");
+            //}
 
 
             #endregion
 
+            #region Q15 - Write a program in C# Sharp to find maximum and minimum element in an array
+
+            int[] arr = { 1, 2, 3, 4, 5, };
+
+            int max = arr[0];
+            int min = arr[0];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                
+                if (arr[i] > max)
+                    max = arr[i];
+
+                if (arr[i] < min)
+                    min = arr[i];
+                
+
+            }
+
+            Console.WriteLine(max);
+            Console.WriteLine(min);
+
+            #endregion
 
         }
 
