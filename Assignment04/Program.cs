@@ -233,26 +233,57 @@ namespace Assignment04
 
             #region Q13 - Write a program in C# Sharp to merge two arrays of the same size sorted in ascending order.
 
-            int[] arr01 = { 1, 2, 3, 4, 5, };
-            int[] arr02 = { 10, 20, 30, 40, 50 };
+            //int[] arr01 = { 1, 2, 3, 4, 5, };
+            //int[] arr02 = { 10, 20, 30, 40, 50 };
 
-            int[] mergedArray = new int[arr01.Length * 2];
+            //int[] mergedArray = new int[arr01.Length * 2];
 
-            int i = 0 , j = 0 , k = 0;
+            //int i = 0 , j = 0 , k = 0;
 
-            while ( i < arr01.Length && j < arr02.Length)
+            //while ( i < arr01.Length && j < arr02.Length)
+            //{
+            //    if ( arr01[i] < arr02[j] )
+            //        mergedArray[k++] = arr01[i++];
+            //    else
+            //        mergedArray[k++] = arr02[j++];
+            //}
+
+            //while (j < arr02.Length)
+            //    mergedArray[k++] ^= arr02[j++];
+
+            //foreach (int item in mergedArray )
+            //    Console.WriteLine( item  );
+
+            #endregion
+
+            #region Q14 - Write a program in C# Sharp to count the frequency of each element of an array
+
+            int[] arr01 = { 1, 2, 1, 2, 3, 4, 4 };
+            bool[] used = new bool[arr01.Length];
+
+            for (int i = 0; i < arr01.Length; i++)
             {
-                if ( arr01[i] < arr02[j] )
-                    mergedArray[k++] = arr01[i++];
-                else
-                    mergedArray[k++] = arr02[j++];
+
+                if (used[i])
+                    continue;
+
+                int count = 0;
+
+                for (int j = 0; j < arr01.Length; j++)
+
+                {
+                    
+                    if (arr01[i] == arr01[j])
+                    {
+                        count++;
+
+                        used[j] = true;
+
+                    }
+                }
+
+                Console.WriteLine($"Item {arr01[i]} Repeated {count} times");
             }
-
-            while ( j < arr02.Length )
-                mergedArray[k++] ^= arr02[j++];
-
-            foreach (int item in mergedArray )
-                Console.WriteLine( item  );
 
 
             #endregion
