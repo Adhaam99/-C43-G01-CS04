@@ -368,23 +368,43 @@ namespace Assignment04
             #region Q19 - Write a program to create two multidimensional arrays of same size. Accept value from user and store them in first array. Now copy all the elements of firstarray on second array and print second array.
 
 
+            //int[] arr01 = new int[3];
+            //int[] arr02 = new int[3];
+
+            //for (int i = 0; i < arr01.Length; i++)
+            //{
+            //    Console.Write($"Enter element {i + 1 } : ");
+            //    int.TryParse( Console.ReadLine() , out arr01[i] );
+            //}
+
+            //Console.WriteLine("===============================");
+
+            //for (int i = 0; i < arr02.Length; i++)
+            //{
+            //    arr02[i] = arr01[i];
+            //    Console.WriteLine( arr02[i] );
+            //}
+
+            #endregion
+
+            #region Q20 - Write a Program to Print One Dimensional Array in Reverse Order
+
             int[] arr01 = new int[3];
-            int[] arr02 = new int[3];
 
             for (int i = 0; i < arr01.Length; i++)
             {
-                Console.Write($"Enter element {i + 1 } : ");
-                int.TryParse( Console.ReadLine() , out arr01[i] );
+                Console.Write($"Enter element {i + 1} : ");
+                int.TryParse(Console.ReadLine(), out arr01[i]);
             }
 
             Console.WriteLine("===============================");
 
-            for (int i = 0; i < arr02.Length; i++)
+            for (int i = arr01.Length - 1; i >= 0; i--)
             {
-                arr02[i] = arr01[i];
-                Console.WriteLine( arr02[i] );
-            }
 
+                Console.WriteLine(arr01[i]);
+                
+            }
             #endregion
 
         }
