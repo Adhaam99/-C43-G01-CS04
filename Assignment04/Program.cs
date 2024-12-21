@@ -313,27 +313,52 @@ namespace Assignment04
 
             #region Q16 - Write a program in C# Sharp to find the second largest element in an array.
 
-            int[] arr = { 1, 2, 3, 4, 5, };
+            //int[] arr = { 1, 2, 3, 4, 5, };
 
-            int max = int.MinValue;
-            int secondMax = int.MinValue;
+            //int max = int.MinValue;
+            //int secondMax = int.MinValue;
 
-            for (int i = 0; i < arr.Length; i++)
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+
+            //    if (arr[i] > max)
+            //    {
+            //        secondMax = max;
+            //        max = arr[i];
+            //    }
+            //    else if (arr[i] > secondMax && arr[i] != max)
+            //    {
+            //        secondMax = arr[i];
+            //    }
+
+            //}
+
+            //Console.WriteLine($"Second largest element is {secondMax}");
+
+            #endregion
+
+            #region Q17 - Consider an Array of Integer values with size N, having values as in this Example
+
+
+
+            #endregion
+
+            #region Q18 - Given a list of space separated words, reverse the order of the words.
+
+            Console.Write("Enter a string : ");
+
+            string myString = Console.ReadLine() ?? " ";
+
+            string[] arrOfString = myString.Split(" ");
+
+            StringBuilder newString = new StringBuilder();
+
+            for (int i = arrOfString.Length - 1; i >= 0; i--)
             {
-
-                if (arr[i] > max)
-                {
-                    secondMax = max;
-                    max = arr[i];
-                }
-                else if (arr[i] > secondMax && arr[i] != max)
-                {
-                    secondMax = arr[i];
-                }
-
+                newString.AppendFormat(" {0}", arrOfString[i]);
             }
 
-            Console.WriteLine($"Second largest element is {secondMax}");
+            Console.Write(newString.ToString().TrimStart());
 
             #endregion
 
