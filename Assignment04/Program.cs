@@ -118,31 +118,31 @@ namespace Assignment04
 
             #region Q8 - Write a program in C# Sharp to find prime numbers within a range of numbers.
 
-            Console.Write("Start number : ");
+            //Console.Write("Start number : ");
 
-            int.TryParse(Console.ReadLine(), out int num01);
+            //int.TryParse(Console.ReadLine(), out int num01);
 
-            Console.Write("End number : ");
+            //Console.Write("End number : ");
 
-            int.TryParse(Console.ReadLine(), out int num02);
+            //int.TryParse(Console.ReadLine(), out int num02);
 
-            for (int i = num01; i < num02; i++)
-            {
-                
+            //for (int i = num01; i < num02; i++)
+            //{
 
-                bool flag = true;
 
-                if ( i <= 1)
-                    flag = false;
-                for (int j = 2 ; j <= Math.Sqrt(i); j++)
-                {
-                    if ( i % j == 0)
-                        flag = false;
-                }
+            //    bool flag = true;
 
-                if ( flag )
-                    Console.WriteLine(i);
-            }
+            //    if ( i <= 1)
+            //        flag = false;
+            //    for (int j = 2 ; j <= Math.Sqrt(i); j++)
+            //    {
+            //        if ( i % j == 0)
+            //            flag = false;
+            //    }
+
+            //    if ( flag )
+            //        Console.WriteLine(i);
+            //}
 
             #endregion
 
@@ -202,12 +202,28 @@ namespace Assignment04
 
             #region Q11 - Write a program that prints an identity matrix using for loop, in other words takes a value n from the user and shows the identity table of size n* n.
 
+            Console.Write("Enter a number : ");
+
+            int.TryParse(Console.ReadLine(), out int num);
+
+            for (int i = 0; i < num; i++)
+            {
+                for (int j = 0; j < num; j++)
+                {
+                    if (i == j)
+                        Console.Write("1");
+                    else
+                        Console.Write("0");
+                }
+
+                Console.WriteLine();
+            }
 
             #endregion
 
 
         }
 
-        
+
     }
 }
