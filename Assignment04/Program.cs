@@ -223,11 +223,37 @@ namespace Assignment04
 
             #region Q12 - Write a program in C# Sharp to find the sum of all elements of the array.
 
-            int[] arr = { 1, 2, 3, 4, 5, };
+            //int[] arr = { 1, 2, 3, 4, 5, };
 
-            double arrSum = arr.Sum();
+            //double arrSum = arr.Sum();
 
-            Console.WriteLine($"Sum is : {arrSum}");
+            //Console.WriteLine($"Sum is : {arrSum}");
+
+            #endregion
+
+            #region Q13 - Write a program in C# Sharp to merge two arrays of the same size sorted in ascending order.
+
+            int[] arr01 = { 1, 2, 3, 4, 5, };
+            int[] arr02 = { 10, 20, 30, 40, 50 };
+
+            int[] mergedArray = new int[arr01.Length * 2];
+
+            int i = 0 , j = 0 , k = 0;
+
+            while ( i < arr01.Length && j < arr02.Length)
+            {
+                if ( arr01[i] < arr02[j] )
+                    mergedArray[k++] = arr01[i++];
+                else
+                    mergedArray[k++] = arr02[j++];
+            }
+
+            while ( j < arr02.Length )
+                mergedArray[k++] ^= arr02[j++];
+
+            foreach (int item in mergedArray )
+                Console.WriteLine( item  );
+
 
             #endregion
 
