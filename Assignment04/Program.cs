@@ -274,56 +274,67 @@ namespace Assignment04
 
             #region Q12 - Write a program in C# Sharp to find the sum of all elements of the array.
 
-            bool flag;
+            //bool flag;
 
-            int size;
+            //int size;
 
-            do
-            {
-                Console.Write("Enter array size : ");
+            //do
+            //{
+            //    Console.Write("Enter array size : ");
 
-                flag = int.TryParse(Console.ReadLine() , out size);
-            }while (!flag);
+            //    flag = int.TryParse(Console.ReadLine() , out size);
+            //}while (!flag);
 
-            int[] arr = new int[size];
-            int sum = 0;
-            for (int i = 0; i < arr.Length; i++)
-            {
-                do
-                {
-                    Console.Write($"Enter #{i + 1} element in tha array : ");
-                    flag = int.TryParse(Console.ReadLine() , out arr[i]);
-                }while (!flag);
+            //int[] arr = new int[size];
+            //int sum = 0;
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+            //    do
+            //    {
+            //        Console.Write($"Enter #{i + 1} element in tha array : ");
+            //        flag = int.TryParse(Console.ReadLine() , out arr[i]);
+            //    }while (!flag);
 
-                sum += arr[i];
-            }
+            //    sum += arr[i];
+            //}
 
-            Console.WriteLine($"Array sum is : {sum}");
+            //Console.WriteLine($"Array sum is : {sum}");
 
             #endregion
 
             #region Q13 - Write a program in C# Sharp to merge two arrays of the same size sorted in ascending order.
 
-            //int[] arr01 = { 1, 2, 3, 4, 5, };
-            //int[] arr02 = { 10, 20, 30, 40, 50 };
 
-            //int[] mergedArray = new int[arr01.Length * 2];
+            int[] arr01 = { 1, 20, 3, 40, 5, };
+            int[] arr02 = { 10, 2, 30, 4, 50 };
 
-            //int i = 0 , j = 0 , k = 0;
+            int[] mergedArray = new int[10];
 
-            //while ( i < arr01.Length && j < arr02.Length)
-            //{
-            //    if ( arr01[i] < arr02[j] )
-            //        mergedArray[k++] = arr01[i++];
-            //    else
-            //        mergedArray[k++] = arr02[j++];
-            //}
+            int j = 0;
 
-            //while (j < arr02.Length)
-            //    mergedArray[k++] ^= arr02[j++];
+            for (int i = 0 ;  i < arr01.Length; i++)
+            {
+                mergedArray[i] = arr01[i];
+            }
 
-            //foreach (int item in mergedArray )
-            //    Console.WriteLine( item  );
+            for (int i = 5; i < mergedArray.Length; i++)
+            {
+                mergedArray[i] = arr02[j];
+                j++;
+            }
+
+            for (int i = 0 ; i < mergedArray.Length; i++)
+            {
+                for (int k =  i+1 ; k < mergedArray.Length; k++)
+                {
+                    if (mergedArray[i] > mergedArray[k])
+                        (mergedArray[i], mergedArray[k]) = (mergedArray[k], mergedArray[i]);
+                }
+            }
+
+
+            foreach (int item in mergedArray)
+                Console.Write(item);
 
             #endregion
 
