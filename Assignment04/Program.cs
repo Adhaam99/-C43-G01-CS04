@@ -56,26 +56,26 @@ namespace Assignment04
 
             #region Q4 - Write a program that takes two integers then prints the power.
 
-            Console.Write("Enter number : ");
+            //Console.Write("Enter number : ");
 
-            int.TryParse(Console.ReadLine(), out int num);
+            //int.TryParse(Console.ReadLine(), out int num);
 
-            Console.Write("Enter Power : ");
+            //Console.Write("Enter Power : ");
 
-            int.TryParse(Console.ReadLine(), out int power);
+            //int.TryParse(Console.ReadLine(), out int power);
 
-            //double result = Math.Pow(num, power);
+            ////double result = Math.Pow(num, power);
 
-            int Result = 1;
+            //int Result = 1;
 
-            for (int i = 0; i < power; i++)
-            {
-                Result = Result * num;
-            }
+            //for (int i = 0; i < power; i++)
+            //{
+            //    Result = Result * num;
+            //}
 
-            Console.Clear();
+            //Console.Clear();
 
-            Console.WriteLine(Result);
+            //Console.WriteLine(Result);
 
             #endregion
 
@@ -118,11 +118,28 @@ namespace Assignment04
 
             #region Q7 - Write a program to allow the user to enter int and print the REVERSED of it.
 
-            //Console.Write("Enter number : ");
+            //int num;
+            //bool flag;
 
-            //int.TryParse(Console.ReadLine(), out int num);
+            //do
+            //{
 
-            //Console.WriteLine( ~num );
+            //    Console.Write("Enter number : ");
+
+            //    flag = int.TryParse(Console.ReadLine(), out num);
+
+            //}while (!flag);
+
+            //int result = 0;
+
+            //while (num > 0)
+            //{
+            //    int lastNum = num % 10;
+            //    result = (result * 10 ) + lastNum;
+            //    num = num / 10;
+            //}
+
+            //Console.WriteLine(result);
 
             #endregion
 
@@ -136,22 +153,26 @@ namespace Assignment04
 
             //int.TryParse(Console.ReadLine(), out int num02);
 
-            //for (int i = num01; i < num02; i++)
+            //bool flag = true;
+
+            //for (int i = num01; i <= num02; i++)
             //{
 
-
-            //    bool flag = true;
-
-            //    if ( i <= 1)
-            //        flag = false;
-            //    for (int j = 2 ; j <= Math.Sqrt(i); j++)
+            //    for (int j = 2; j < i; j++)
             //    {
-            //        if ( i % j == 0)
+            //        if (i % j == 0)
+            //        {
+
             //            flag = false;
+            //            break;
+            //        }
+
             //    }
 
-            //    if ( flag )
+            //    if (flag || num01 != 1)
             //        Console.WriteLine(i);
+
+            //    flag = true;
             //}
 
             #endregion
@@ -162,7 +183,7 @@ namespace Assignment04
 
             //int.TryParse(Console.ReadLine(), out int num);
 
-            //StringBuilder binary = new StringBuilder();
+            //string binary = string.Empty; 
 
             //if (num == 0)
             //{
@@ -172,7 +193,8 @@ namespace Assignment04
             //{
             //    while (num > 0)
             //    {
-            //        binary.Append(num % 2);
+            //        int rem = num % 2;
+            //        binary = rem + binary;
             //        num /= 2;
             //    }
             //}
@@ -184,22 +206,41 @@ namespace Assignment04
 
             #region Q10 - Create a program that asks the user to input three points (x1, y1), (x2, y2), and (x3, y3), and determines whether these points lie on a single straight line
 
-            //int[,] points = new int[3, 2];
+            //int x1 , x2 , x3 , y1 , y2 , y3 ;
 
-            //for (int i = 0; i < points.GetLength(0); i++)
+            //bool flag01, flag02;
+
+            //do
             //{
-            //    Console.WriteLine($"Enter point {i + 1}");
+            //    Console.Write("Enter X1 : ");
+            //    flag01 = int.TryParse(Console.ReadLine(), out x1);
 
-            //    for (int j = 0; j < points.GetLength(1); )
-            //    {
-            //        bool numParse = int.TryParse(Console.ReadLine(), out points[i, j]);
+            //    Console.Write("Enter Y1 : ");
+            //    flag02 = int.TryParse(Console.ReadLine(), out y1);
+            //}while(!flag01 && !flag02);
 
-            //        if (numParse)
-            //            ++j;
-            //    }
-            //}
+            //do
+            //{
+            //    Console.Write("Enter X2 : ");
+            //    flag01 = int.TryParse(Console.ReadLine(), out x2);
 
-            //if (points[0,0] == points[1,0] && points[0, 0] == points[2, 0] && points[0, 1] == points[1, 1] && points[0, 1] == points[2, 1]  )
+            //    Console.Write("Enter Y2 : ");
+            //    flag02 = int.TryParse(Console.ReadLine(), out y2);
+            //} while (!flag01 && !flag02);
+
+            //do
+            //{
+            //    Console.Write("Enter X3 : ");
+            //    flag01 = int.TryParse(Console.ReadLine(), out x3);
+
+            //    Console.Write("Enter Y3 : ");
+            //    flag02 = int.TryParse(Console.ReadLine(), out y3);
+            //} while (!flag01 && !flag02);
+
+            //double slope01 = (y2 - y1) / (x2 - x1);
+            //double slope02 = (y3 - y2) / (x3 - x2);
+
+            //if ( slope01 == slope02 )
             //{
             //    Console.WriteLine("Three points is in the same straight line");
             //}
@@ -233,11 +274,31 @@ namespace Assignment04
 
             #region Q12 - Write a program in C# Sharp to find the sum of all elements of the array.
 
-            //int[] arr = { 1, 2, 3, 4, 5, };
+            bool flag;
 
-            //double arrSum = arr.Sum();
+            int size;
 
-            //Console.WriteLine($"Sum is : {arrSum}");
+            do
+            {
+                Console.Write("Enter array size : ");
+
+                flag = int.TryParse(Console.ReadLine() , out size);
+            }while (!flag);
+
+            int[] arr = new int[size];
+            int sum = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                do
+                {
+                    Console.Write($"Enter #{i + 1} element in tha array : ");
+                    flag = int.TryParse(Console.ReadLine() , out arr[i]);
+                }while (!flag);
+
+                sum += arr[i];
+            }
+
+            Console.WriteLine($"Array sum is : {sum}");
 
             #endregion
 
